@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rick_morty_app/screens/character_list_screen.dart';
-import 'package:rick_morty_app/screens/home_screen.dart';
+import 'package:supercomicsapp/screens/home_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
 }
 

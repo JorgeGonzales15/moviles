@@ -1,38 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:rick_morty_app/screens/character_favorite_screens.dart';
-import 'package:rick_morty_app/screens/character_list_screen.dart';
+import 'package:supercomicsapp/screens/favorites_screen.dart';
+import 'package:supercomicsapp/screens/superheroes_screen.dart';
 
-
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
-  final List<Widget> _tabs = [
-    const CharacterListScreen(),
-    const FavoriteCharacterListScreen()
-  ];
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _tabs[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite), label: "Favorites"),
-        ],
-        currentIndex: _currentIndex,
-        onTap: (value) {
-          setState(() {
-            _currentIndex = value;
-          });
-        },
-      ),
-    );
+        appBar: AppBar(
+          title: const Text('SuperComicsApp'),
+          centerTitle: true,
+        ),
+        body: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network(
+                'https://i.pinimg.com/736x/5e/b0/d8/5eb0d854dc80503583400233f6b4d3c5.jpg',
+                width: 200,
+                height: 200),
+            const SizedBox(height: 50),
+            SizedBox(
+              width: 200,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red, foregroundColor: Colors.white),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SuperheroesScreen()));
+                },
+                child: const Text('Superheroes'),
+              ),
+            ),
+            const SizedBox(height: 15),
+            SizedBox(
+                width: 200,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      foregroundColor: Colors.white),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const FavoritesScreen()));
+                  },
+                  child: const Text('Favorites'),
+                ))
+          ],
+        )));
   }
 }
