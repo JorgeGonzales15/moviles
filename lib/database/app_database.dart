@@ -3,8 +3,8 @@ import 'package:sqflite/sqflite.dart';
 
 class AppDatabase {
   final int version = 1;
-  final String databaseName = "cocktails3.db";
-  final String tableName = "cocktails3";
+  final String databaseName = "characters.db";
+  final String tableName = "characters";
 
   Database? _db;
 

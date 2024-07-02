@@ -1,5 +1,6 @@
-import 'package:cocktail/cocktail_screen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:rick_morty_app/screens/character_list_screen.dart';
+import 'package:rick_morty_app/screens/home_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,7 +13,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CocktailScreen(),
+      home: HomeScreen(),
     );
   }
 }
