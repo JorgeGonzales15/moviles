@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:supercomicsapp/screens/home_screen.dart';
+import 'package:turismo_app/screens/home_screen.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
 }
 
